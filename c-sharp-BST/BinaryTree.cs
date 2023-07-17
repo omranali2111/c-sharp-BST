@@ -11,26 +11,34 @@ namespace c_sharp_BST
         public Node root;
 
 
-        public Node buildTree(int[] arr, int start, int end)
+        public void Insert(int value)
         {
+            root = InsertNode(root, value);
+        }
 
-            if (start > end)
+        private Node InsertNode(Node node, int value)
+        {
+            if (node == null)
             {
-                return null;
+                // Create a new node if the current node is null
+                return new Node(value);
             }
 
+            // Recursively insert the value in the left or right subtree
+            if (value < node.data)
+            {
+                node.left = InsertNode(node.left, value);
+            }
+            else if (value > node.data)
+            {
+                node.right = InsertNode(node.right, value);
+            }
 
-            int mid = (start + end) / 2;
-            Node node = new Node(arr[mid]);
-
-
-            node.left = buildTree(arr, start, mid - 1);
-            node.right = buildTree(arr, mid + 1, end);
-
-
-
+            // Return the updated node
             return node;
         }
+
+
 
         public void InOrderTraversal(Node node)
         {

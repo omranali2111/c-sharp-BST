@@ -1,14 +1,21 @@
 ﻿using c_sharp_BST;
 
-internal class Program
-{
-    private static void Main(string[] args)
-    {
-        int[] arr = { 7, 5, 3, 10, 9, 20, 2, 4 };
-        BinaryTree tree = new BinaryTree();
-        tree.root = tree.buildTree(arr, 0, arr.Length - 1);
+using System;
 
-        Console.WriteLine("In-order traversal:");
+class Program
+{
+    static void Main(string[] args)
+    {
+        BinaryTree tree = new BinaryTree();
+        tree.Insert(7);
+        tree.Insert(5);
+        tree.Insert(3);
+        tree.Insert(10);
+        tree.Insert(9);
+        tree.Insert(20);
+        tree.Insert(2);
+        tree.Insert(4);
+
         tree.InOrderTraversal(tree.root);
 
     }

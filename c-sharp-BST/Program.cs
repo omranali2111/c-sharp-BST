@@ -15,8 +15,13 @@ class Program
         tree.Insert(20);
         tree.Insert(2);
         tree.Insert(4);
-
+        Console.WriteLine("Inorder traversal:");
         tree.InOrderTraversal(tree.root);
+        Console.WriteLine("\nPreorder traversal:");
+        tree.PreOrderTraversal(tree.root);
+
+        Console.WriteLine("\nPostorder traversal:");
+        tree.PostOrderTraversal(tree.root);
 
     }
 }

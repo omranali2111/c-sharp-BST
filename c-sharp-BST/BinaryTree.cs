@@ -34,7 +34,7 @@ namespace c_sharp_BST
                 node.right = InsertNode(node.right, value);
             }
 
-            // Return the updated node
+            
             return node;
         }
 
@@ -48,6 +48,25 @@ namespace c_sharp_BST
             InOrderTraversal(node.left);
             Console.Write(node.data + " ");
             InOrderTraversal(node.right);
+        }
+        public void PreOrderTraversal(Node node)
+        {
+            if (node == null)
+                return;
+
+            Console.Write(node.data + " ");
+            PreOrderTraversal(node.left);
+            PreOrderTraversal(node.right);
+        }
+
+        public void PostOrderTraversal(Node node)
+        {
+            if (node == null)
+                return;
+
+            PostOrderTraversal(node.left);
+            PostOrderTraversal(node.right);
+            Console.Write(node.data + " ");
         }
     }
 }
